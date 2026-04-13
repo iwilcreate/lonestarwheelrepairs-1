@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lone Star Wheel Repairs — Texas Wheel Repair Quotes</title>
+  <meta name="description" content="Get fast quotes from verified wheel repair shops across Texas. Submit one request, hear from up to 5 local shops within 60 minutes." />
+  <!-- GA4 placeholder: replace G-XXXXXXXXXX before launch -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ── Tokens ──────────────────────────────────────────── */
+    :root {
+      --bg:          #06091a;
+      --bg2:         #0b1020;
+      --bg3:         #0e1526;
+      --surface:     rgba(255,255,255,.045);
+      --surface-h:   rgba(255,255,255,.075);
+      --red:         #e63030;
+      --red-h:       #ff4444;
+      --red-dim:     rgba(230,48,48,.15);
+      --red-glow:    rgba(230,48,48,.25);
+      --blue:        #2563eb;
+      --blue-glow:   #3b82f6;
+      --blue-dim:    rgba(59,130,246,.12);
+      --gold:        #f59e0b;
+      --white:       #ffffff;
+      --w90:         rgba(255,255,255,.90);
+      --w70:         rgba(255,255,255,.70);
+      --w45:         rgba(255,255,255,.45);
+      --w20:         rgba(255,255,255,.20);
+      --w10:         rgba(255,255,255,.10);
+      --w06:         rgba(255,255,255,.06);
+      --border:      rgba(255,255,255,.09);
+      --border-h:    rgba(255,255,255,.18);
+      --radius-sm:   8px;
+      --radius:      12px;
+      --radius-lg:   18px;
+      --radius-xl:   24px;
+      --ease:        cubic-bezier(.4,0,.2,1);
+      --transition:  .25s var(--ease);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Utility ─────────────────────────────────────────── */
+    .hidden { display: none !important; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: .4rem; padding: .75rem 1.6rem;
+      border-radius: 50px; font-size: .9rem; font-weight: 600;
+      letter-spacing: .01em;
+      cursor: pointer; border: none;
+      transition: var(--transition); text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-red {
+      background: linear-gradient(135deg, #e63030 0%, #c42020 100%);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(230,48,48,.3), inset 0 1px 0 rgba(255,255,255,.15);
+    }
+    .btn-red:hover {
+      background: linear-gradient(135deg, #ff4444 0%, #e63030 100%);
+      box-shadow: 0 6px 24px rgba(230,48,48,.45), inset 0 1px 0 rgba(255,255,255,.2);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: var(--w06); color: var(--w90);
+      border: 1px solid var(--border-h);
+      backdrop-filter: blur(8px);
+    }
+    .btn-ghost:hover {
+      background: var(--w10); border-color: var(--w20);
+      transform: translateY(-1px);
+    }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .7rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--red); margin-bottom: .6rem;
+    }
+    .section-label::before {
+      content: ''; width: 18px; height: 2px;
+      background: var(--red); border-radius: 2px; flex-shrink: 0;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+      line-height: 1.15; color: var(--white); margin-bottom: 1rem;
+      letter-spacing: -.02em;
+    }
+    .section-sub {
+      font-size: .95rem; color: var(--w45); max-width: 580px;
+      line-height: 1.7; font-weight: 400;
+    }
+    input, select, textarea { font-family: inherit; font-size: .9rem; }
+    a { color: inherit; }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(6,9,26,.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; padding: 0 2rem; height: 68px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: .65rem;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-logo-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--red) 0%, #b01818 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(230,48,48,.35);
+    }
+    .nav-logo-text {
+      font-size: .78rem; font-weight: 800; line-height: 1.3;
+      color: var(--white); letter-spacing: .05em; text-transform: uppercase;
+    }
+    .nav-logo-text span { color: var(--red); }
+    .nav-links {
+      display: flex; align-items: center; gap: .1rem; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; font-size: .82rem; font-weight: 500;
+      color: var(--w45); padding: .5rem .9rem; border-radius: 50px;
+      transition: var(--transition); white-space: nowrap; letter-spacing: .01em;
+    }
+    .nav-links a:hover { color: var(--white); background: var(--w06); }
+    .nav-right { display: flex; align-items: center; gap: .85rem; }
+    .lang-toggle {
+      display: flex; background: var(--w06);
+      border: 1px solid var(--border); border-radius: 50px; overflow: hidden;
+      padding: 3px;
+    }
+    .lang-btn {
+      padding: .25rem .75rem; font-size: .72rem; font-weight: 700;
+      cursor: pointer; border: none; background: transparent;
+      color: var(--w45); transition: var(--transition);
+      border-radius: 50px; letter-spacing: .04em;
+    }
+    .lang-btn.active {
+      background: var(--red); color: var(--white);
+      box-shadow: 0 2px 8px rgba(230,48,48,.4);
+    }
+    .lang-btn:hover:not(.active) { color: var(--white); background: var(--w10); }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 110px 2rem 5rem;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 75% 50%, rgba(37,99,235,.15) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 45% at 15% 75%, rgba(230,48,48,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 30% at 50% 10%, rgba(230,48,48,.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* subtle grid overlay */
+    #hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--red-dim);
+      border: 1px solid rgba(230,48,48,.25);
+      border-radius: 50px; padding: .35rem 1rem;
+      font-size: .72rem; font-weight: 600; color: #ff7070;
+      text-transform: uppercase; letter-spacing: .09em; margin-bottom: 1.75rem;
+      backdrop-filter: blur(8px);
+    }
+    .hero-headline {
+      font-size: clamp(3.8rem, 8.5vw, 7.5rem);
+      font-weight: 900; line-height: .92;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .hero-headline .line-red { color: var(--red); }
+    .hero-headline .line-white { color: var(--white); }
+    .hero-sub {
+      font-size: 1rem; color: var(--w90);
+      font-weight: 600; margin-bottom: .5rem; letter-spacing: -.01em;
+    }
+    .hero-desc {
+      font-size: .88rem; color: var(--w45); line-height: 1.75;
+      margin-bottom: 2.25rem; max-width: 420px; font-weight: 400;
+    }
+    .hero-ctas { display: flex; gap: .85rem; flex-wrap: wrap; margin-bottom: 2.75rem; }
+    .hero-stats {
+      display: flex; gap: 0; flex-wrap: wrap;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat {
+      padding-right: 2rem; margin-right: 2rem;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-num {
+      font-size: 1.6rem; font-weight: 800; color: var(--white);
+      line-height: 1; letter-spacing: -.02em;
+    }
+    .hero-stat-lbl { font-size: .7rem; color: var(--w45); margin-top: .25rem; font-weight: 500; }
+
+    /* ── Hero Map ────────────────────────────────────────── */
+    .hero-right {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .map-glow {
+      position: absolute; width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,235,.28) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .map-wrap { position: relative; z-index: 1; width: 100%; max-width: 480px; }
+    .map-svg {
+      width: 100%; height: auto;
+      filter: drop-shadow(0 0 32px rgba(59,130,246,.22));
+    }
+    .city-dot-pulse { animation: pulse 2.8s ease-in-out infinite; }
+    .city-dot-pulse:nth-child(2n) { animation-delay: .5s; }
+    .city-dot-pulse:nth-child(3n) { animation-delay: 1s; }
+    .city-dot-pulse:nth-child(4n) { animation-delay: 1.5s; }
+    .city-dot-pulse:nth-child(5n) { animation-delay: 2s; }
+    @keyframes pulse {
+      0%, 100% { opacity: .6; }
+      50%       { opacity: 1; }
+    }
+    .hero-badge-card {
+      position: absolute; top: 4px; right: 4px;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      color: #0d1528;
+      border-radius: var(--radius-lg); padding: 1rem 1.25rem;
+      box-shadow: 0 12px 48px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.2);
+      text-align: center; min-width: 116px; z-index: 3;
+    }
+    .hero-badge-card .badge-icon { font-size: 1.5rem; margin-bottom: .3rem; }
+    .hero-badge-card .badge-num  { font-size: 1.5rem; font-weight: 900; color: #0d1528; line-height: 1; }
+    .hero-badge-card .badge-lbl  {
+      font-size: .62rem; font-weight: 700; color: #6b7280;
+      text-transform: uppercase; letter-spacing: .07em; margin-top: .25rem;
+    }
+
+    /* ── Section Shell ───────────────────────────────────── */
+    section { padding: 5.5rem 2rem; }
+    .inner { max-width: 1140px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 3.5rem; }
+    .section-head .section-label { justify-content: center; }
+    .section-head .section-sub { margin: 0 auto; }
+
+    /* ── Cities ──────────────────────────────────────────── */
+    #cities { background: var(--bg2); }
+    .region-group { margin-bottom: 2rem; }
+    .region-name {
+      font-size: .65rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--w45);
+      margin-bottom: .75rem; padding-bottom: .4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .city-grid { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .city-chip {
+      padding: .38rem 1rem; border-radius: 50px; cursor: pointer;
+      font-size: .8rem; font-weight: 500;
+      background: var(--surface); color: var(--w70);
+      border: 1px solid var(--border);
+      transition: var(--transition); white-space: nowrap;
+    }
+    .city-chip:hover {
+      border-color: rgba(230,48,48,.5); color: var(--white);
+      background: var(--red-dim);
+      box-shadow: 0 0 14px rgba(230,48,48,.18);
+      transform: translateY(-1px);
+    }
+
+    /* ── Quote Form ──────────────────────────────────────── */
+    #quote { background: var(--bg); }
+    .form-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 2.75rem;
+      box-shadow: 0 24px 80px rgba(0,0,0,.3);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.1rem; }
+    .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+    .form-row.full  { grid-template-columns: 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: .45rem; }
+    .form-group label {
+      font-size: .73rem; font-weight: 600; color: var(--w70);
+      letter-spacing: .02em;
+    }
+    .form-group label .req { color: var(--red); margin-left: .15rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: .75rem 1rem;
+      border: 1px solid var(--border-h); border-radius: var(--radius);
+      background: var(--surface); color: var(--white);
+      transition: var(--transition); outline: none;
+    }
+    .form-group input::placeholder { color: var(--w45); }
+    .form-group select option { background: #0d1528; color: var(--white); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue-glow);
+      background: var(--surface-h);
+      box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+    }
+    .form-group input.error,
+    .form-group select.error {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(230,48,48,.1);
+    }
+    .field-error { font-size: .7rem; color: #ff6b6b; margin-top: .15rem; font-weight: 500; }
+    .form-section-title {
+      font-size: .65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .14em; color: var(--w45);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: .45rem; margin-bottom: 1rem; margin-top: 1.75rem;
+    }
+    .form-section-title:first-child { margin-top: 0; }
+
+    /* Photo Upload */
+    .photo-drop {
+      border: 1.5px dashed var(--border-h); border-radius: var(--radius);
+      padding: 1.75rem; text-align: center; cursor: pointer;
+      transition: var(--transition); background: var(--surface);
+    }
+    .photo-drop:hover, .photo-drop.drag-over {
+      border-color: var(--blue-glow);
+      background: var(--blue-dim);
+      box-shadow: 0 0 0 3px rgba(59,130,246,.08);
+    }
+    .photo-drop-icon { font-size: 2rem; margin-bottom: .5rem; opacity: .7; }
+    .photo-drop-text { font-size: .82rem; color: var(--w45); line-height: 1.6; }
+    .photo-drop-text strong { color: var(--w70); font-weight: 600; }
+    .photo-previews { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .photo-thumb {
+      position: relative; width: 72px; height: 72px;
+      border-radius: var(--radius-sm); overflow: hidden;
+      border: 1px solid var(--border-h);
+    }
+    .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-thumb button {
+      position: absolute; top: 3px; right: 3px;
+      background: rgba(0,0,0,.7); color: #fff;
+      border: none; border-radius: 50%; width: 18px; height: 18px;
+      font-size: 10px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #photoInput { display: none; }
+
+    .form-submit-row { text-align: center; margin-top: 1.75rem; }
+    .form-submit-row .btn { width: 100%; font-size: 1rem; padding: 1rem; border-radius: var(--radius); }
+    .form-note { font-size: .71rem; color: var(--w45); margin-top: .7rem; font-weight: 500; }
+
+    /* Confirmation */
+    #confirmation { max-width: 540px; margin: 0 auto; text-align: center; padding: 3.5rem 1rem; }
+    .confirm-icon { font-size: 3.5rem; margin-bottom: .9rem; }
+    .confirm-title { font-size: 1.85rem; font-weight: 800; margin-bottom: .65rem; letter-spacing: -.02em; }
+    .confirm-sub { font-size: .92rem; color: var(--w45); line-height: 1.75; margin-bottom: 1.4rem; }
+    .confirm-box {
+      background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.2);
+      border-radius: var(--radius); padding: 1.1rem 1.5rem;
+      font-size: .87rem; color: #86efac; line-height: 1.7; margin-bottom: 1.75rem;
+    }
+
+    /* ── How It Works ────────────────────────────────────── */
+    #how-it-works { background: var(--bg3); text-align: center; }
+    .steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; margin-top: 3rem;
+      background: var(--border);
+      border-radius: var(--radius-xl); overflow: hidden;
+    }
+    .step {
+      background: var(--bg2); padding: 2.5rem 2rem;
+      transition: var(--transition); position: relative;
+    }
+    .step:hover { background: var(--surface-h); }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--red) 0%, #a01010 100%);
+      color: var(--white); font-size: 1.1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 6px 20px rgba(230,48,48,.3);
+    }
+    .step-title { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: -.01em; }
+    .step-desc { font-size: .84rem; color: var(--w45); line-height: 1.7; }
+
+    /* ── Services ────────────────────────────────────────── */
+    #services { background: var(--bg2); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px; margin-top: 3rem;
+      background: var(--border);
+      border-radius: var(--radius-xl); overflow: hidden;
+    }
+    .service-card {
+      background: var(--bg3); padding: 2rem 1.5rem;
+      text-align: center; transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      opacity: 0; transition: var(--transition);
+    }
+    .service-card:hover { background: var(--surface-h); }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover .service-icon-wrap { background: var(--red-dim); border-color: rgba(230,48,48,.3); }
+    .service-icon-wrap {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto .9rem; font-size: 1.6rem;
+      transition: var(--transition);
+    }
+    .service-name { font-size: .9rem; font-weight: 700; margin-bottom: .35rem; letter-spacing: -.01em; }
+    .service-desc { font-size: .78rem; color: var(--w45); line-height: 1.6; }
+
+    /* ── Why Us ──────────────────────────────────────────── */
+    #why-us { background: var(--bg); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px; margin-top: 3rem;
+      background: var(--border);
+      border-radius: var(--radius-xl); overflow: hidden;
+    }
+    .why-card {
+      background: var(--bg2); padding: 2rem 1.75rem;
+      transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .why-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(59,130,246,.3), transparent);
+      opacity: 0; transition: var(--transition);
+    }
+    .why-card:hover { background: rgba(59,130,246,.04); }
+    .why-card:hover::after { opacity: 1; }
+    .why-icon-wrap {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+    .why-card:hover .why-icon-wrap { background: var(--blue-dim); border-color: rgba(59,130,246,.2); }
+    .why-title { font-size: .92rem; font-weight: 700; margin-bottom: .4rem; letter-spacing: -.01em; }
+    .why-desc { font-size: .81rem; color: var(--w45); line-height: 1.7; }
+
+    /* ── Testimonials ────────────────────────────────────── */
+    #testimonials { background: var(--bg3); text-align: center; }
+    .testimonials-grid {
+      display: flex; gap: 1.25rem; flex-wrap: wrap;
+      justify-content: center; margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2rem;
+      max-width: 340px; flex: 1 1 290px; text-align: left;
+      transition: var(--transition);
+      box-shadow: 0 4px 24px rgba(0,0,0,.15);
+    }
+    .testimonial-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    }
+    .stars { color: var(--gold); font-size: .9rem; margin-bottom: .75rem; letter-spacing: .1em; }
+    .testimonial-text {
+      font-size: .87rem; color: var(--w70); line-height: 1.7;
+      margin-bottom: 1.1rem; font-style: italic;
+    }
+    .testimonial-divider {
+      height: 1px; background: var(--border); margin-bottom: 1rem;
+    }
+    .testimonial-author { font-size: .82rem; font-weight: 700; letter-spacing: -.01em; }
+    .testimonial-location { font-size: .73rem; color: var(--w45); margin-top: .15rem; }
+
+    /* ── Pricing ─────────────────────────────────────────── */
+    #pricing { background: var(--bg2); text-align: center; }
+    .pricing-grid {
+      display: flex; gap: 1.25rem; justify-content: center;
+      flex-wrap: wrap; margin-top: 3rem; align-items: stretch;
+    }
+    .pricing-card {
+      flex: 1 1 220px; max-width: 258px;
+      border-radius: var(--radius-lg); padding: 2rem 1.5rem;
+      border: 1px solid var(--border);
+      background: var(--bg3); position: relative; text-align: center;
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .pricing-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.25);
+    }
+    .pricing-card.featured {
+      border-color: rgba(230,48,48,.4);
+      background: rgba(230,48,48,.04);
+      box-shadow: 0 0 0 1px rgba(230,48,48,.15), 0 20px 60px rgba(230,48,48,.1);
+    }
+    .pricing-card.featured:hover { transform: translateY(-4px); }
+    .pricing-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--red) 0%, #c01010 100%);
+      color: var(--white); font-size: .65rem; font-weight: 700;
+      padding: .25rem 1rem; border-radius: 50px; white-space: nowrap;
+      letter-spacing: .07em; text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(230,48,48,.4);
+    }
+    .pricing-tier {
+      font-size: .65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .14em; color: var(--w45); margin-bottom: .6rem;
+    }
+    .pricing-price { font-size: 2.6rem; font-weight: 900; line-height: 1; letter-spacing: -.03em; }
+    .pricing-price span { font-size: .82rem; font-weight: 500; color: var(--w45); }
+    .pricing-lead { font-size: .8rem; color: var(--w45); margin-top: .35rem; margin-bottom: 1rem; }
+    .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+    .pricing-features {
+      list-style: none; text-align: left; font-size: .82rem;
+      color: var(--w70); line-height: 1.6; margin-bottom: 1.5rem; flex: 1;
+    }
+    .pricing-features li {
+      display: flex; gap: .5rem; align-items: flex-start; padding: .28rem 0;
+    }
+    .pricing-features li::before {
+      content: "✓"; color: var(--red); font-weight: 800;
+      flex-shrink: 0; font-size: .8rem; margin-top: .1rem;
+    }
+    .pricing-cta { display: block; margin-top: auto; }
+
+    /* ── Shop Application ────────────────────────────────── */
+    #shop-apply { background: var(--bg); }
+    .shop-form-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 2.75rem; margin-top: 2.5rem;
+      box-shadow: 0 24px 80px rgba(0,0,0,.3);
+    }
+    .shop-form-card .form-group label { color: var(--w70); }
+    .shop-form-card .form-group input,
+    .shop-form-card .form-group select {
+      background: var(--surface);
+      border-color: var(--border-h); color: var(--white);
+    }
+    .shop-form-card .form-group input::placeholder { color: var(--w45); }
+    .shop-form-card .form-group select option { background: #0c1228; }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    #footer {
+      background: #030610;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3.5rem;
+    }
+    .footer-brand-desc {
+      font-size: .84rem; color: var(--w45); line-height: 1.75;
+      margin-top: .85rem; max-width: 280px;
+    }
+    .footer-contact { margin-top: .85rem; font-size: .82rem; color: var(--w45); line-height: 2.1; }
+    .footer-contact a { text-decoration: none; transition: var(--transition); }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-col h4 {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .14em; color: var(--w70); margin-bottom: 1.1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .footer-col ul a {
+      text-decoration: none; font-size: .83rem; color: var(--w45);
+      transition: var(--transition); display: inline-flex; align-items: center;
+    }
+    .footer-col ul a:hover { color: var(--white); padding-left: 3px; }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 1.75rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .75rem;
+      font-size: .76rem; color: var(--w45);
+    }
+    .footer-legal a {
+      margin-left: 1.5rem; text-decoration: none; color: var(--w45);
+      transition: var(--transition);
+    }
+    .footer-legal a:hover { color: var(--white); }
+
+    /* ── WhatsApp Float ──────────────────────────────────── */
+    #whatsapp-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 300;
+      background: #25d366; color: #fff; border-radius: 50%;
+      width: 54px; height: 54px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      text-decoration: none; transition: var(--transition);
+    }
+    #whatsapp-float:hover {
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37,211,102,.55);
+    }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .form-row, .form-row.three { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-top { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.25rem; }
+      .services-grid, .why-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stat { padding-right: 1.25rem; margin-right: 1.25rem; }
+    }
+    @media (max-width: 420px) {
+      .services-grid, .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">🔧</div>
+      <div class="nav-logo-text">Lone Star<br>Wheel Repairs</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works" data-en="How It Works" data-es="Cómo Funciona">How It Works</a></li>
+      <li><a href="#cities"       data-en="Cities"        data-es="Ciudades">Cities</a></li>
+      <li><a href="#services"     data-en="Services"      data-es="Servicios">Services</a></li>
+      <li><a href="#pricing"      data-en="For Shops"     data-es="Talleres">For Shops</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+        <button class="lang-btn"        id="btnES" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="#quote" class="btn btn-red" style="padding:.45rem 1.1rem;font-size:.8rem;"
+         data-en="Get Free Quotes" data-es="Cotizar Gratis">Get Free Quotes</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════ HERO -->
+<section id="hero">
+  <div class="hero-inner">
+
+    <!-- Left: Text -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span>🌟</span>
+        <span data-en="Texas's #1 Wheel Repair Network" data-es="La Red #1 de Reparación de Rines en Texas">Texas's #1 Wheel Repair Network</span>
+      </div>
+
+      <h1 class="hero-headline">
+        <div class="line-red">Lone Star</div>
+        <div class="line-white">Wheel</div>
+        <div class="line-white">Repairs</div>
+      </h1>
+
+      <p class="hero-sub" data-en="Texas's Premier Wheel Repair Referral Network" data-es="La Red Premier de Reparación de Rines de Texas">
+        Texas's Premier Wheel Repair Referral Network
+      </p>
+      <p class="hero-desc" data-en="Submit one free request and hear back from up to 5 verified local shops within 60 minutes — no account needed, completely free for vehicle owners."
+         data-es="Envía una solicitud gratis y recibe respuesta de hasta 5 talleres verificados en 60 minutos — sin cuenta, completamente gratis.">
+        Submit one free request and hear back from up to 5 verified local shops within 60 minutes — no account needed, completely free for vehicle owners.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-red" style="font-size:1rem;padding:.85rem 2rem;"
+           data-en="Get My Free Quotes →" data-es="Obtener Mis Cotizaciones →">Get My Free Quotes →</a>
+        <a href="#shop-apply" class="btn btn-ghost"
+           data-en="Join as a Shop" data-es="Unirme como Taller">Join as a Shop</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-lbl" data-en="Partner Shops" data-es="Talleres Asociados">Partner Shops</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-lbl" data-en="Avg. Rating" data-es="Calificación">Avg. Rating</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">&lt;60 min</div>
+          <div class="hero-stat-lbl" data-en="Response Time" data-es="Tiempo de Respuesta">Response Time</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Free</div>
+          <div class="hero-stat-lbl" data-en="For Owners" data-es="Para Propietarios">For Owners</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Texas Map -->
+    <div class="hero-right">
+      <div class="map-glow"></div>
+      <div class="map-wrap">
+
+        <!-- Quality badge -->
+        <div class="hero-badge-card">
+          <div class="badge-icon">⭐</div>
+          <div class="badge-num">4.9</div>
+          <div class="badge-lbl" data-en="Verified Shops" data-es="Talleres Verificados">Verified Shops</div>
+        </div>
+
+        <!-- Texas SVG Map — accurate proportional outline -->
+        <!--
+          Coordinate system: viewBox 0 0 500 480
+          Based on Texas geographic bounds:
+            Longitude: 106.65°W (El Paso) → 93.51°W (Sabine Pass)  = 13.14° wide
+            Latitude:  36.50°N (Panhandle) → 25.84°N (Brownsville) = 10.66° tall
+          Scale: x = (106.65 - lon) * 36  + 14
+                 y = (36.50  - lat) * 42  + 16
+          Key border points derived from actual Texas boundary coordinates.
+        -->
+        <svg class="map-svg" viewBox="0 0 500 480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="stateglow" x="-8%" y="-8%" width="116%" height="116%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <radialGradient id="stateFill" cx="55%" cy="42%" r="58%">
+              <stop offset="0%"   stop-color="#1d3b82" stop-opacity=".60"/>
+              <stop offset="100%" stop-color="#0a1a4a" stop-opacity=".30"/>
+            </radialGradient>
+          </defs>
+
+          <!--
+            Texas outline — clockwise from NW panhandle corner.
+            Panhandle: 103°W–100°W at 36.5°N, then SE along Oklahoma/Red River,
+            eastern border, Gulf Coast (SE→SW), Rio Grande (SW→NW) back to El Paso,
+            NM border north, back to panhandle.
+
+            Computed coords (lon,lat → x,y):
+              103.00W, 36.50N → (130, 16)   NW panhandle
+              100.00W, 36.50N → (238, 16)   NE panhandle top
+              100.00W, 34.00N → (238, 121)  panhandle SE / OK border start
+               99.00W, 34.00N → (274, 121)  step east along OK border
+               97.00W, 33.80N → (346, 129)
+               95.00W, 33.60N → (418, 137)  NE Texas (near Texarkana latitude)
+               94.04W, 33.55N → (452, 139)  actual NE corner
+               94.04W, 30.00N → (452, 288)  E border drops south
+               93.82W, 29.72N → (460, 300)  SE corner / Sabine Pass area
+               94.80W, 29.40N → (425, 313)  Gulf Coast curves west
+               95.37W, 28.98N → (404, 331)  Houston area
+               97.40W, 27.80N → (331, 381)  Corpus Christi area
+               97.86W, 26.93N → (314, 418)  coast continues SW
+               97.14W, 25.96N → (341, 459)  Brownsville / Rio Grande mouth
+               99.50W, 27.50N → (256, 380)  Rio Grande — Laredo
+              100.90W, 29.36N → (205, 298)  Del Rio
+              103.25W, 29.00N → (121, 314)  Big Bend south dip
+              104.50W, 29.80N → (76, 281)   Big Bend NW
+              106.50W, 31.78N → (14, 198)   El Paso
+              106.63W, 36.50N → (14, 16)    NM/TX north border (top)
+              103.00W, 36.50N → (130, 16)   back to NW panhandle
+          -->
+          <path
+            d="M 130,16
+               L 238,16
+               L 238,121
+               L 274,121
+               L 346,129
+               L 418,137
+               L 452,139
+               L 452,288
+               C 456,294 460,298 460,300
+               C 448,306 436,310 425,313
+               C 412,318 408,325 404,331
+               C 388,343 372,356 358,368
+               C 344,375 338,379 331,381
+               C 323,390 318,404 314,418
+               C 308,436 342,449 341,459
+               C 320,462 298,462 280,458
+               C 268,453 262,447 256,440
+               C 248,432 252,402 256,380
+               C 244,372 230,350 220,338
+               C 212,322 208,310 205,298
+               C 192,292 176,308 162,312
+               C 148,313 134,313 121,314
+               C 110,308 92,294 76,281
+               C 58,262 36,230 14,198
+               L 14,16
+               Z"
+            fill="url(#stateFill)"
+            stroke="#3b82f6"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            filter="url(#stateglow)"
+            opacity=".92"
+          />
+
+          <!-- ── City dots positioned to match geography ── -->
+
+          <!-- Houston  (95.37W, 29.76N) → (404, 286) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="404" cy="300" r="4.5" fill="#ffffff"/>
+          </g>
+          <text x="410" y="298" font-size="9" fill="rgba(255,255,255,.7)" font-family="sans-serif">Houston</text>
+
+          <!-- Dallas  (96.80W, 32.78N) → (353, 160) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="354" cy="162" r="4" fill="#ffffff"/>
+          </g>
+          <text x="360" y="160" font-size="9" fill="rgba(255,255,255,.7)" font-family="sans-serif">Dallas</text>
+
+          <!-- Fort Worth  (97.33W, 32.72N) → (334, 165) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="335" cy="165" r="3" fill="#ffffff"/>
+          </g>
+
+          <!-- Austin  (97.75W, 30.27N) → (319, 263) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="318" cy="263" r="4" fill="#ff6b6b"/>
+          </g>
+          <text x="324" y="261" font-size="9" fill="rgba(255,120,120,.8)" font-family="sans-serif">Austin</text>
+
+          <!-- San Antonio  (98.49W, 29.42N) → (293, 297) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="292" cy="298" r="4" fill="#ffffff"/>
+          </g>
+          <text x="298" y="296" font-size="8" fill="rgba(255,255,255,.65)" font-family="sans-serif">S.Antonio</text>
+
+          <!-- El Paso  (106.49W, 31.76N) → (14, 200) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="20" cy="200" r="3.5" fill="#ffffff"/>
+          </g>
+          <text x="26" y="198" font-size="8" fill="rgba(255,255,255,.6)" font-family="sans-serif">El Paso</text>
+
+          <!-- Amarillo  (101.83W, 35.22N) → (173, 55) — in panhandle -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="173" cy="57" r="3.5" fill="#ffffff"/>
+          </g>
+          <text x="153" y="54" font-size="8" fill="rgba(255,255,255,.55)" font-family="sans-serif">Amarillo</text>
+
+          <!-- Lubbock  (101.87W, 33.58N) → (172, 121) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="172" cy="123" r="3.5" fill="#ffffff"/>
+          </g>
+          <text x="152" y="120" font-size="8" fill="rgba(255,255,255,.55)" font-family="sans-serif">Lubbock</text>
+
+          <!-- Midland  (102.08W, 31.99N) → (165, 193) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="165" cy="192" r="3" fill="#ffffff"/>
+          </g>
+
+          <!-- Waco  (97.15W, 31.55N) → (342, 209) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="342" cy="210" r="3" fill="#ffffff"/>
+          </g>
+
+          <!-- Corpus Christi  (97.40W, 27.80N) → (332, 367) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="330" cy="368" r="3.5" fill="#ffffff"/>
+          </g>
+
+          <!-- Laredo  (99.50W, 27.50N) → (256, 380) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="255" cy="378" r="3" fill="#ffffff"/>
+          </g>
+
+          <!-- McAllen  (98.24W, 26.21N) → (303, 434) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="302" cy="432" r="3" fill="#ffffff"/>
+          </g>
+
+          <!-- Tyler  (95.30W, 32.35N) → (406, 181) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="406" cy="182" r="3" fill="#ffffff"/>
+          </g>
+
+          <!-- Beaumont  (94.10W, 30.08N) → (451, 270) -->
+          <g filter="url(#glow)">
+            <circle class="city-dot-pulse" cx="448" cy="270" r="3" fill="#ffffff"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+  </div><!-- /hero-inner -->
+</section>
+
+<!-- ═══════════════════════════════════════════════════ CITIES -->
+<section id="cities">
+  <div class="inner">
+    <div class="section-head">
+      <div class="section-label" data-en="SERVING ALL OF TEXAS" data-es="SERVICIO EN TODO TEXAS">SERVING ALL OF TEXAS</div>
+      <h2 class="section-title" data-en="Select Your City to Get Started" data-es="Selecciona Tu Ciudad Para Comenzar">Select Your City to Get Started</h2>
+      <p class="section-sub" data-en="Click your city — we'll pre-fill your quote form automatically." data-es="Haz clic en tu ciudad — llenaremos tu formulario automáticamente.">
+        Click your city — we'll pre-fill your quote form automatically.
+      </p>
+    </div>
+    <div id="cityRegions"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ QUOTE FORM -->
+<section id="quote">
+  <div class="inner" style="max-width:780px;">
+    <div class="section-head">
+      <div class="section-label" data-en="FREE QUOTE REQUEST" data-es="SOLICITUD DE COTIZACIÓN GRATUITA">FREE QUOTE REQUEST</div>
+      <h2 class="section-title" data-en="Tell Us About Your Wheels" data-es="Cuéntanos Sobre Tus Rines">Tell Us About Your Wheels</h2>
+      <p class="section-sub" data-en="Fill out the form. Up to 5 verified shops will contact you within 60 minutes." data-es="Llena el formulario. Hasta 5 talleres te contactarán en 60 minutos.">
+        Fill out the form. Up to 5 verified shops will contact you within 60 minutes.
+      </p>
+    </div>
+
+    <div id="quoteFormWrap">
+      <div class="form-card">
+        <form id="quoteForm" novalidate>
+
+          <div class="form-section-title" data-en="YOUR CONTACT INFO" data-es="TUS DATOS DE CONTACTO">YOUR CONTACT INFO</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><span data-en="First Name" data-es="Nombre">First Name</span><span class="req">*</span></label>
+              <input type="text" id="firstName" placeholder="John" autocomplete="given-name"/>
+              <div class="field-error" id="err-firstName"></div>
+            </div>
+            <div class="form-group">
+              <label><span data-en="Phone Number" data-es="Teléfono">Phone Number</span><span class="req">*</span></label>
+              <input type="tel" id="phone" placeholder="(512) 555-0100" autocomplete="tel" inputmode="numeric" onkeydown="return restrictPhone(event)" oninput="this.value=this.value.replace(/[^\d\s\(\)\-\+]/g,'')"/>
+              <div class="field-error" id="err-phone"></div>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label><span data-en="Email Address" data-es="Correo Electrónico">Email Address</span><span class="req">*</span></label>
+              <input type="email" id="email" placeholder="john@example.com" autocomplete="email"/>
+              <div class="field-error" id="err-email"></div>
+            </div>
+          </div>
+
+          <div class="form-section-title" data-en="YOUR LOCATION" data-es="TU UBICACIÓN">YOUR LOCATION</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><span data-en="City" data-es="Ciudad">City</span><span class="req">*</span></label>
+              <input type="text" id="city" placeholder="Austin"/>
+              <div class="field-error" id="err-city"></div>
+            </div>
+            <div class="form-group">
+              <label><span data-en="ZIP Code" data-es="Código Postal">ZIP Code</span><span class="req">*</span></label>
+              <input type="text" id="zip" placeholder="78701" maxlength="5" inputmode="numeric" onkeydown="return restrictDigits(event)" oninput="this.value=this.value.replace(/\D/g,'')"/>
+              <div class="field-error" id="err-zip"></div>
+            </div>
+          </div>
+
+          <div class="form-section-title" data-en="YOUR VEHICLE" data-es="TU VEHÍCULO">YOUR VEHICLE</div>
+          <div class="form-row three">
+            <div class="form-group">
+              <label><span data-en="Year" data-es="Año">Year</span><span class="req">*</span></label>
+              <select id="vehicleYear">
+                <option value="" data-en="-- Year --" data-es="-- Año --">-- Year --</option>
+              </select>
+              <div class="field-error" id="err-year"></div>
+            </div>
+            <div class="form-group">
+              <label><span data-en="Make" data-es="Marca">Make</span><span class="req">*</span></label>
+              <select id="vehicleMake" disabled>
+                <option value="" data-en="-- Select Year First --" data-es="-- Selecciona Año --">-- Select Year First --</option>
+              </select>
+              <div class="field-error" id="err-make"></div>
+            </div>
+            <div class="form-group">
+              <label><span data-en="Model" data-es="Modelo">Model</span><span class="req">*</span></label>
+              <select id="vehicleModel" disabled>
+                <option value="" data-en="-- Select Make First --" data-es="-- Selecciona Marca --">-- Select Make First --</option>
+              </select>
+              <div class="field-error" id="err-model"></div>
+            </div>
+          </div>
+
+          <div class="form-section-title" data-en="REPAIR DETAILS" data-es="DETALLES DE REPARACIÓN">REPAIR DETAILS</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><span data-en="Number of Wheels" data-es="Número de Rines">Number of Wheels</span><span class="req">*</span></label>
+              <select id="wheelCount">
+                <option value="">--</option>
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option>
+              </select>
+              <div class="field-error" id="err-wheels"></div>
+            </div>
+            <div class="form-group">
+              <label><span data-en="Repair Type" data-es="Tipo de Reparación">Repair Type</span><span class="req">*</span></label>
+              <select id="repairType">
+                <option value="" data-en="-- Select --" data-es="-- Seleccionar --">-- Select --</option>
+                <option value="Curb Rash"      data-en="Curb Rash / Scuff"    data-es="Golpe de Bordo / Raspón">Curb Rash / Scuff</option>
+                <option value="Bent Rim"       data-en="Bent Rim"             data-es="Rin Doblado">Bent Rim</option>
+                <option value="Cracked Wheel"  data-en="Cracked Wheel"        data-es="Rin Agrietado">Cracked Wheel</option>
+                <option value="Paint/Refinish" data-en="Paint / Refinish"     data-es="Pintura / Reacabado">Paint / Refinish</option>
+                <option value="Chrome"         data-en="Chrome Repair"        data-es="Reparación de Cromo">Chrome Repair</option>
+                <option value="Other"          data-en="Other"                data-es="Otro">Other</option>
+              </select>
+              <div class="field-error" id="err-repairType"></div>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label><span data-en="Damage Description" data-es="Descripción del Daño">Damage Description</span></label>
+              <textarea id="damageDesc" rows="3"
+                data-placeholder-en="Describe the damage — e.g. scraped front-left wheel on a curb..."
+                data-placeholder-es="Describe el daño — ej. rin delantero izquierdo raspado en el bordo..."
+                placeholder="Describe the damage..."></textarea>
+            </div>
+          </div>
+
+          <div class="form-section-title" data-en="PHOTOS (OPTIONAL)" data-es="FOTOS (OPCIONAL)">PHOTOS (OPTIONAL)</div>
+          <div class="form-row full">
+            <div class="form-group">
+              <div class="photo-drop" id="photoDrop">
+                <div class="photo-drop-icon">📷</div>
+                <div class="photo-drop-text">
+                  <strong data-en="Click to upload or drag & drop" data-es="Haz clic o arrastra">Click to upload or drag &amp; drop</strong><br>
+                  <span data-en="JPG, PNG, HEIC · up to 10MB · max 6 photos" data-es="JPG, PNG, HEIC · máx 10MB · 6 fotos">JPG, PNG, HEIC · up to 10MB · max 6 photos</span>
+                </div>
+                <div class="photo-previews" id="photoPreviews"></div>
+              </div>
+              <input type="file" id="photoInput" accept="image/jpeg,image/png,image/heic,image/heif" multiple/>
+            </div>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-red" id="submitBtn"
+              data-en="Send My Request to Local Shops →"
+              data-es="Enviar Mi Solicitud a Talleres Locales →">
+              Send My Request to Local Shops →
+            </button>
+            <p class="form-note" data-en="✓ 100% Free  ·  ✓ No account required  ·  ✓ Shops contact you"
+               data-es="✓ 100% Gratis  ·  ✓ Sin cuenta  ·  ✓ Los talleres te contactan">
+              ✓ 100% Free &nbsp;·&nbsp; ✓ No account required &nbsp;·&nbsp; ✓ Shops contact you
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="confirmation" class="hidden">
+      <div class="confirm-icon">✅</div>
+      <div class="confirm-title" data-en="Request Sent!" data-es="¡Solicitud Enviada!">Request Sent!</div>
+      <div class="confirm-sub" data-en="Your request has been sent to up to 5 verified shops in your area. You will hear from a shop within 60 minutes."
+           data-es="Tu solicitud fue enviada a hasta 5 talleres verificados. Recibirás respuesta en 60 minutos.">
+        Your request has been sent to up to 5 verified shops in your area. You will hear from a shop within 60 minutes.
+      </div>
+      <div class="confirm-box" data-en="📱 Check your phone and email — shops will reach out with their best quotes."
+           data-es="📱 Revisa tu teléfono y correo — los talleres te contactarán con sus mejores precios.">
+        📱 Check your phone and email — shops will reach out with their best quotes.
+      </div>
+      <a href="#" class="btn btn-red" onclick="resetForm();return false;"
+         data-en="Submit Another Request" data-es="Enviar Otra Solicitud">Submit Another Request</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="inner">
+    <div class="section-head">
+      <div class="section-label" data-en="HOW IT WORKS" data-es="CÓMO FUNCIONA">HOW IT WORKS</div>
+      <h2 class="section-title" data-en="3 Simple Steps" data-es="3 Pasos Simples">3 Simple Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title" data-en="Submit Your Request" data-es="Envía Tu Solicitud">Submit Your Request</div>
+        <div class="step-desc" data-en="Fill out one short form with your vehicle and damage details. Free, takes under 2 minutes." data-es="Llena un formulario corto. Gratis, toma menos de 2 minutos.">Fill out one short form with your vehicle and damage details. Free, takes under 2 minutes.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title" data-en="Shops Are Notified" data-es="Talleres Son Notificados">Shops Are Notified</div>
+        <div class="step-desc" data-en="We instantly alert up to 5 verified wheel repair shops near you based on your ZIP code." data-es="Alertamos hasta 5 talleres verificados cerca de ti según tu código postal.">We instantly alert up to 5 verified wheel repair shops near you based on your ZIP code.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title" data-en="Pick the Best Quote" data-es="Elige la Mejor Cotización">Pick the Best Quote</div>
+        <div class="step-desc" data-en="Shops call or text you directly within 60 minutes. You compare and choose — no pressure." data-es="Los talleres te contactan en 60 minutos. Tú comparas y eliges sin presión.">Shops call or text you directly within 60 minutes. You compare and choose — no pressure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ SERVICES -->
+<section id="services">
+  <div class="inner">
+    <div class="section-head">
+      <div class="section-label" data-en="WHAT WE COVER" data-es="LO QUE CUBRIMOS">WHAT WE COVER</div>
+      <h2 class="section-title" data-en="All Types of Wheel & Rim Repairs" data-es="Todo Tipo de Reparaciones de Rines">All Types of Wheel &amp; Rim Repairs</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-wrap">🔧</div>
+        <div class="service-name" data-en="Curb Rash Repair" data-es="Raspón de Bordo">Curb Rash Repair</div>
+        <div class="service-desc" data-en="Smooth out scuffs and scratches from curb contact on alloy or steel wheels." data-es="Elimina raspones de rines de aleación o acero por contacto con el bordo.">Smooth out scuffs and scratches from curb contact.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">⚙️</div>
+        <div class="service-name" data-en="Bent Rim Straightening" data-es="Enderezado de Rin Doblado">Bent Rim Straightening</div>
+        <div class="service-desc" data-en="Hydraulic straightening restores bent rims to factory spec." data-es="El enderezado hidráulico restaura los rines a su especificación de fábrica.">Hydraulic straightening restores bent rims to factory spec.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">🔩</div>
+        <div class="service-name" data-en="Cracked Wheel Welding" data-es="Soldadura de Rin Agrietado">Cracked Wheel Welding</div>
+        <div class="service-desc" data-en="TIG welding repairs cracks in alloy wheels for structural integrity." data-es="Soldadura TIG repara grietas en rines de aleación.">TIG welding repairs cracks in alloy wheels.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">🎨</div>
+        <div class="service-name" data-en="Wheel Painting & Refinishing" data-es="Pintura y Reacabado">Wheel Painting &amp; Refinishing</div>
+        <div class="service-desc" data-en="Custom colors, powder coating, and OEM color-match refinishing." data-es="Colores personalizados, pintura en polvo y reacabado en color OEM.">Custom colors, powder coat, and OEM color-match.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">✨</div>
+        <div class="service-name" data-en="Chrome & Polish Repair" data-es="Cromo y Pulido">Chrome &amp; Polish Repair</div>
+        <div class="service-desc" data-en="Restore mirror finish on chrome wheels — pitting, flaking, and oxidation." data-es="Restaura el acabado espejo en rines cromados.">Restore mirror finish — pitting, flaking, oxidation.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">🚘</div>
+        <div class="service-name" data-en="All Vehicle Types" data-es="Todo Tipo de Vehículos">All Vehicle Types</div>
+        <div class="service-desc" data-en="Cars, trucks, SUVs, vans, and luxury vehicles. OEM and aftermarket." data-es="Autos, camionetas, SUVs y vehículos de lujo. OEM y aftermarket.">Cars, trucks, SUVs, vans &amp; luxury vehicles.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ WHY US -->
+<section id="why-us">
+  <div class="inner">
+    <div class="section-head">
+      <div class="section-label" data-en="WHY LONE STAR" data-es="POR QUÉ LONE STAR">WHY LONE STAR</div>
+      <h2 class="section-title" data-en="Built for Texas Vehicle Owners" data-es="Hecho para Propietarios en Texas">Built for Texas Vehicle Owners</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-wrap">🎯</div>
+        <div class="why-title" data-en="Local, Verified Shops" data-es="Talleres Verificados">Local, Verified Shops</div>
+        <div class="why-desc" data-en="Every shop is reviewed and verified before receiving leads." data-es="Cada taller es revisado y verificado.">Every shop is reviewed and verified before receiving leads.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">⚡</div>
+        <div class="why-title" data-en="60-Minute Guarantee" data-es="Garantía de 60 Minutos">60-Minute Guarantee</div>
+        <div class="why-desc" data-en="Shops commit to contacting you within 60 minutes." data-es="Los talleres se comprometen a contactarte en 60 minutos.">Shops commit to contacting you within 60 minutes.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">💬</div>
+        <div class="why-title" data-en="English & Spanish" data-es="Inglés y Español">English &amp; Spanish</div>
+        <div class="why-desc" data-en="Fully bilingual platform — switch languages anytime with the toggle above." data-es="Plataforma completamente bilingüe.">Fully bilingual — switch languages anytime above.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🆓</div>
+        <div class="why-title" data-en="Always Free for You" data-es="Siempre Gratis Para Ti">Always Free for You</div>
+        <div class="why-desc" data-en="Vehicle owners never pay. Shops subscribe to be in the network." data-es="Los propietarios nunca pagan. Los talleres se suscriben.">Vehicle owners never pay. Shops subscribe to be in the network.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">📍</div>
+        <div class="why-title" data-en="Statewide Coverage" data-es="Cobertura Estatal">Statewide Coverage</div>
+        <div class="why-desc" data-en="From El Paso to Beaumont — every corner of Texas covered." data-es="Desde El Paso hasta Beaumont — todo Texas cubierto.">From El Paso to Beaumont — every corner of Texas.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🛡️</div>
+        <div class="why-title" data-en="Fraud Protection" data-es="Protección Contra Fraude">Fraud Protection</div>
+        <div class="why-desc" data-en="Duplicate submissions and bad actors are silently filtered." data-es="Solicitudes duplicadas y actores maliciosos son filtrados.">Duplicate submissions and bad actors are silently filtered.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ TESTIMONIALS -->
+<section id="testimonials">
+  <div class="inner">
+    <div class="section-head">
+      <div class="section-label" data-en="WHAT CUSTOMERS SAY" data-es="RESEÑAS DE CLIENTES">WHAT CUSTOMERS SAY</div>
+      <h2 class="section-title" data-en="Real Reviews From Texas Drivers" data-es="Reseñas Reales de Conductores en Texas">Real Reviews From Texas Drivers</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-en='"Filled out the form in 2 minutes, had 3 shops call me within 45 minutes. Best price was $120 — done same day!"'
+           data-es='"Llené el formulario en 2 minutos, 3 talleres me llamaron en 45 minutos. ¡Terminado el mismo día!"'>
+          "Filled out the form in 2 minutes, had 3 shops call me within 45 minutes. Best price was $120 — done same day!"
+        </p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">Marcus T.</div>
+        <div class="testimonial-location">Austin, TX</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-en='"Tenía dos rines doblados. Recibí 4 cotizaciones en menos de una hora. El servicio en español fue excelente."'
+           data-es='"Tenía dos rines doblados. Recibí 4 cotizaciones en menos de una hora. El servicio en español fue excelente."'>
+          "Tenía dos rines doblados. Recibí 4 cotizaciones en menos de una hora. El servicio en español fue excelente."
+        </p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">Alejandro R.</div>
+        <div class="testimonial-location">San Antonio, TX</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-en='"Within an hour I had 5 quotes ranging from $85 to $200. Saved hundreds compared to the dealership."'
+           data-es='"En una hora tenía 5 cotizaciones. Ahorré cientos comparado con el distribuidor."'>
+          "Within an hour I had 5 quotes ranging from $85 to $200. Saved hundreds compared to the dealership."
+        </p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">Brenda K.</div>
+        <div class="testimonial-location">Houston, TX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ PRICING -->
+<section id="pricing">
+  <div class="inner">
+    <div class="section-head">
+      <div class="section-label" data-en="FOR SHOP OWNERS" data-es="PARA TALLERES">FOR SHOP OWNERS</div>
+      <h2 class="section-title" data-en="Flexible Plans for Every Shop" data-es="Planes Flexibles para Cada Taller">Flexible Plans for Every Shop</h2>
+      <p class="section-sub" data-en="Join the network and start receiving pre-qualified local leads. No long-term contracts." data-es="Únete y recibe solicitudes locales precalificadas. Sin contratos a largo plazo.">
+        Join the network and start receiving pre-qualified local leads. No long-term contracts.
+      </p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier" data-en="Starter" data-es="Inicial">Starter</div>
+        <div class="pricing-price">$25<span data-en="/mo" data-es="/mes">/mo</span></div>
+        <div class="pricing-lead" data-en="+ $25 per lead" data-es="+ $25 por solicitud">+ $25 per lead</div>
+        <hr class="pricing-divider"/>
+        <ul class="pricing-features">
+          <li data-en="3 free onboarding leads" data-es="3 solicitudes gratis">3 free onboarding leads</li>
+          <li data-en="Standard tier priority" data-es="Prioridad estándar">Standard tier priority</li>
+          <li data-en="Up to 25-mile radius" data-es="Hasta 25 millas de radio">Up to 25-mile radius</li>
+          <li data-en="Shop portal access" data-es="Acceso al portal">Shop portal access</li>
+        </ul>
+        <a href="#shop-apply" class="btn btn-ghost pricing-cta" data-en="Apply Now" data-es="Aplicar">Apply Now</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge" data-en="Most Popular" data-es="Más Popular">Most Popular</div>
+        <div class="pricing-tier" data-en="Mid" data-es="Intermedio">Mid</div>
+        <div class="pricing-price">$35<span data-en="/mo" data-es="/mes">/mo</span></div>
+        <div class="pricing-lead" data-en="+ $35 per lead" data-es="+ $35 por solicitud">+ $35 per lead</div>
+        <hr class="pricing-divider"/>
+        <ul class="pricing-features">
+          <li data-en="5 free onboarding leads" data-es="5 solicitudes gratis">5 free onboarding leads</li>
+          <li data-en="Mid-tier lead priority" data-es="Prioridad intermedia">Mid-tier lead priority</li>
+          <li data-en="Custom service radius" data-es="Radio personalizado">Custom service radius</li>
+          <li data-en="Multi-user accounts" data-es="Cuentas multiusuario">Multi-user accounts</li>
+        </ul>
+        <a href="#shop-apply" class="btn btn-red pricing-cta" data-en="Apply Now" data-es="Aplicar">Apply Now</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier" data-en="Premium" data-es="Premium">Premium</div>
+        <div class="pricing-price">$45<span data-en="/mo" data-es="/mes">/mo</span></div>
+        <div class="pricing-lead" data-en="+ $45 per lead" data-es="+ $45 por solicitud">+ $45 per lead</div>
+        <hr class="pricing-divider"/>
+        <ul class="pricing-features">
+          <li data-en="10 free onboarding leads" data-es="10 solicitudes gratis">10 free onboarding leads</li>
+          <li data-en="First priority on all leads" data-es="Primera prioridad">First priority on all leads</li>
+          <li data-en="Unlimited service radius" data-es="Radio ilimitado">Unlimited service radius</li>
+          <li data-en="All Mid features" data-es="Todo lo de Intermedio">All Mid features</li>
+        </ul>
+        <a href="#shop-apply" class="btn btn-ghost pricing-cta" data-en="Apply Now" data-es="Aplicar">Apply Now</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier" data-en="Territory Lock" data-es="Territorio Exclusivo">Territory Lock</div>
+        <div class="pricing-price" style="font-size:1.7rem;">$1k+<span data-en="/mo" data-es="/mes">/mo</span></div>
+        <div class="pricing-lead" data-en="Unlimited leads included" data-es="Solicitudes ilimitadas">Unlimited leads included</div>
+        <hr class="pricing-divider"/>
+        <ul class="pricing-features">
+          <li data-en="Exclusive city/ZIP territory" data-es="Territorio exclusivo">Exclusive city/ZIP territory</li>
+          <li data-en="No per-lead charges" data-es="Sin cargo por solicitud">No per-lead charges</li>
+          <li data-en="Highest lead priority" data-es="Mayor prioridad">Highest lead priority</li>
+          <li data-en="Custom pricing by city" data-es="Precio según ciudad">Custom pricing by city</li>
+        </ul>
+        <a href="#shop-apply" class="btn btn-ghost pricing-cta" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ SHOP APPLICATION -->
+<section id="shop-apply">
+  <div class="inner" style="max-width:700px;">
+    <div class="section-head">
+      <div class="section-label" data-en="JOIN THE NETWORK" data-es="ÚNETE A LA RED">JOIN THE NETWORK</div>
+      <h2 class="section-title" data-en="Apply to Become a Partner Shop" data-es="Aplica Para Ser un Taller Asociado">Apply to Become a Partner Shop</h2>
+      <p class="section-sub" data-en="Applications reviewed within 24 hours. Once approved you'll receive login credentials and your first free leads." data-es="Las solicitudes se revisan en 24 horas. Recibirás credenciales y tus primeras solicitudes gratis.">
+        Applications reviewed within 24 hours. Once approved you'll receive login credentials and your first free leads.
+      </p>
+    </div>
+    <div class="shop-form-card">
+      <form id="shopForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-en="Shop Name" data-es="Nombre del Taller">Shop Name</span><span class="req">*</span></label>
+            <input type="text" id="shopName" placeholder="Texas Wheel Pros"/>
+          </div>
+          <div class="form-group">
+            <label><span data-en="Owner Name" data-es="Nombre del Dueño">Owner Name</span><span class="req">*</span></label>
+            <input type="text" id="ownerName" placeholder="John Smith"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-en="Phone" data-es="Teléfono">Phone</span><span class="req">*</span></label>
+            <input type="tel" id="shopPhone" placeholder="(512) 555-0200" inputmode="numeric" onkeydown="return restrictPhone(event)" oninput="this.value=this.value.replace(/[^\d\s\(\)\-\+]/g,'')"/>
+          </div>
+          <div class="form-group">
+            <label><span data-en="Email" data-es="Correo">Email</span><span class="req">*</span></label>
+            <input type="email" id="shopEmail" placeholder="owner@myshop.com"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-en="City" data-es="Ciudad">City</span><span class="req">*</span></label>
+            <input type="text" id="shopCity" placeholder="Austin"/>
+          </div>
+          <div class="form-group">
+            <label><span data-en="ZIP Code" data-es="Código Postal">ZIP Code</span><span class="req">*</span></label>
+            <input type="text" id="shopZip" placeholder="78701" maxlength="5" inputmode="numeric" onkeydown="return restrictDigits(event)" oninput="this.value=this.value.replace(/\D/g,'')"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-en="Desired Plan" data-es="Plan Deseado">Desired Plan</span><span class="req">*</span></label>
+            <select id="shopTier">
+              <option value="" data-en="-- Select Plan --" data-es="-- Seleccionar Plan --">-- Select Plan --</option>
+              <option value="starter"   data-en="Starter — $25/mo + $25/lead"             data-es="Inicial — $25/mes">Starter — $25/mo + $25/lead</option>
+              <option value="mid"       data-en="Mid — $35/mo + $35/lead"                 data-es="Intermedio — $35/mes">Mid — $35/mo + $35/lead</option>
+              <option value="premium"   data-en="Premium — $45/mo + $45/lead"             data-es="Premium — $45/mes">Premium — $45/mo + $45/lead</option>
+              <option value="territory" data-en="Territory Lock — Contact for Pricing"    data-es="Territorio — Consultar">Territory Lock — Contact for Pricing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><span data-en="Service Radius (miles)" data-es="Radio de Servicio (millas)">Service Radius (miles)</span></label>
+            <input type="number" id="shopRadius" placeholder="25" min="1"/>
+          </div>
+        </div>
+        <div class="form-submit-row" style="margin-top:1rem;">
+          <button type="submit" class="btn btn-red"
+            data-en="Submit Application →" data-es="Enviar Solicitud →">Submit Application →</button>
+        </div>
+      </form>
+      <div id="shopConfirmation" class="hidden" style="text-align:center;padding:2rem 0;">
+        <div style="font-size:2.5rem;margin-bottom:.75rem;">🎉</div>
+        <div style="font-size:1.35rem;font-weight:800;margin-bottom:.4rem;"
+             data-en="Application Received!" data-es="¡Solicitud Recibida!">Application Received!</div>
+        <div style="font-size:.88rem;color:var(--w55);"
+             data-en="We'll review your application and get back to you within 24 hours."
+             data-es="Revisaremos tu solicitud y nos comunicaremos en 24 horas.">
+          We'll review your application and get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="nav-logo" style="margin-bottom:.25rem;">
+          <div class="nav-logo-icon">🔧</div>
+          <div class="nav-logo-text">Lone Star<br>Wheel Repairs</div>
+        </a>
+        <p class="footer-brand-desc" data-en="Connecting Texas vehicle owners with trusted local wheel repair shops since 2026." data-es="Conectando propietarios con talleres verificados en Texas desde 2026.">
+          Connecting Texas vehicle owners with trusted local wheel repair shops since 2026.
+        </p>
+        <div class="footer-contact">
+          📞 <a href="tel:+18005550100">1-800-555-0100</a><br>
+          ✉️ <a href="mailto:info@lonestarwheelrepairs.com">info@lonestarwheelrepairs.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Vehicle Owners" data-es="Propietarios">Vehicle Owners</h4>
+        <ul>
+          <li><a href="#quote"       data-en="Get Free Quotes"  data-es="Cotizaciones Gratis">Get Free Quotes</a></li>
+          <li><a href="#how-it-works" data-en="How It Works"    data-es="Cómo Funciona">How It Works</a></li>
+          <li><a href="#services"    data-en="Services"         data-es="Servicios">Services</a></li>
+          <li><a href="#cities"      data-en="Cities We Serve"  data-es="Ciudades">Cities We Serve</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Shop Owners" data-es="Talleres">Shop Owners</h4>
+        <ul>
+          <li><a href="#shop-apply"  data-en="Join the Network" data-es="Únete">Join the Network</a></li>
+          <li><a href="#pricing"     data-en="Pricing Plans"    data-es="Precios">Pricing Plans</a></li>
+          <li><a href="#"            data-en="Shop Portal Login" data-es="Portal del Taller">Shop Portal Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Legal" data-es="Legal">Legal</h4>
+        <ul>
+          <li><a href="/privacy"  data-en="Privacy Policy"  data-es="Privacidad">Privacy Policy</a></li>
+          <li><a href="/terms"    data-en="Terms of Service" data-es="Términos">Terms of Service</a></li>
+          <li><a href="#"         data-en="Contact Us"       data-es="Contáctanos">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-en="© 2026 LoneStarWheelRepairs.com — All rights reserved." data-es="© 2026 LoneStarWheelRepairs.com — Todos los derechos reservados.">© 2026 LoneStarWheelRepairs.com — All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy" data-en="Privacy" data-es="Privacidad">Privacy</a>
+        <a href="/terms"   data-en="Terms"   data-es="Términos">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════ WHATSAPP -->
+<a id="whatsapp-float" href="https://wa.me/18005550100" target="_blank" rel="noopener" title="WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ═══════════════════════════════════════════════════ JAVASCRIPT -->
+<script>
+// ── Texas Cities ──────────────────────────────────────────────────────────────
+const TEXAS_CITIES = {
+  "Major Metro":   ["Houston","San Antonio","Dallas","Austin","Fort Worth","El Paso","Arlington","Corpus Christi","Plano","Laredo","Lubbock","Garland","Irving","Amarillo","Grand Prairie","McKinney","Frisco","Killeen","McAllen","Mesquite"],
+  "DFW Metroplex": ["Allen","Carrollton","Denton","Euless","Flower Mound","Grapevine","Lewisville","Mansfield","Midlothian","North Richland Hills","Rowlett","Southlake","The Colony","Wichita Falls","Waxahachie"],
+  "Houston Metro": ["Baytown","Beaumont","Friendswood","Galveston","Humble","Katy","League City","Missouri City","Pasadena","Pearland","Port Arthur","Richmond","Rosenberg","Spring","Sugar Land","Texas City","The Woodlands","Webster"],
+  "Austin Metro":  ["Cedar Park","Georgetown","Hutto","Leander","Manor","Pflugerville","Round Rock","San Marcos","Taylor","Waco"],
+  "San Antonio":   ["Boerne","Buda","Converse","Kyle","New Braunfels","Schertz","Seguin","Universal City"],
+  "West Texas":    ["Abilene","Big Spring","Brownwood","Del Rio","Longview","Lufkin","Marshall","Midland","Nacogdoches","Odessa","San Angelo","Texarkana","Tyler"],
+  "South Texas":   ["Brownsville","Edinburg","Harlingen","Mission","Pharr","Port Isabel","Weslaco"]
+};
+
+// ── Language ──────────────────────────────────────────────────────────────────
+let currentLang = 'en';
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  document.getElementById('btnES').classList.toggle('active', lang === 'es');
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text !== null) {
+      if (/<[a-z]/.test(text)) el.innerHTML = text;
+      else el.textContent = text;
+    }
+  });
+  document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+    el.placeholder = el.getAttribute('data-placeholder-' + lang) || el.getAttribute('data-placeholder-en');
+  });
+  document.querySelectorAll('select option[data-en]').forEach(opt => {
+    opt.textContent = opt.getAttribute('data-' + lang) || opt.getAttribute('data-en');
+  });
+  renderCities();
+}
+
+// ── Cities ────────────────────────────────────────────────────────────────────
+function renderCities() {
+  const container = document.getElementById('cityRegions');
+  container.innerHTML = '';
+  for (const [region, cities] of Object.entries(TEXAS_CITIES)) {
+    const group = document.createElement('div');
+    group.className = 'region-group';
+    const label = document.createElement('div');
+    label.className = 'region-name';
+    label.textContent = region;
+    group.appendChild(label);
+    const grid = document.createElement('div');
+    grid.className = 'city-grid';
+    cities.forEach(city => {
+      const chip = document.createElement('button');
+      chip.className = 'city-chip';
+      chip.type = 'button';
+      chip.textContent = city;
+      chip.addEventListener('click', () => selectCity(city));
+      grid.appendChild(chip);
+    });
+    group.appendChild(grid);
+    container.appendChild(group);
+  }
+}
+function selectCity(city) {
+  document.getElementById('city').value = city;
+  document.getElementById('quote').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => document.getElementById('firstName').focus(), 600);
+  if (typeof gtag === 'function') gtag('event', 'city_selected', { city_name: city });
+}
+
+// ── NHTSA Vehicle API ─────────────────────────────────────────────────────────
+const NHTSA = 'https://vpic.nhtsa.dot.gov/api/vehicles';
+async function loadYears() {
+  const sel = document.getElementById('vehicleYear');
+  const currentYear = new Date().getFullYear();
+  for (let y = currentYear + 1; y >= 1980; y--) {
+    const opt = document.createElement('option');
+    opt.value = y; opt.textContent = y;
+    sel.appendChild(opt);
+  }
+}
+async function loadMakes(year) {
+  const makeSel = document.getElementById('vehicleMake');
+  const modelSel = document.getElementById('vehicleModel');
+  makeSel.innerHTML = '<option value="">Loading...</option>';
+  makeSel.disabled = true;
+  modelSel.innerHTML = '<option value="">-- Select Make First --</option>';
+  modelSel.disabled = true;
+  try {
+    const res  = await fetch(`${NHTSA}/GetMakesForVehicleType/car?modelyear=${year}&format=json`);
+    const data = await res.json();
+    const makes = (data.Results || []).map(m => m.MakeName).sort();
+    makeSel.innerHTML = '<option value="">-- Select Make --</option>';
+    if (makes.length === 0) populateFallbackMakes(makeSel);
+    else makes.forEach(make => {
+      const opt = document.createElement('option');
+      opt.value = make; opt.textContent = make;
+      makeSel.appendChild(opt);
+    });
+    makeSel.disabled = false;
+  } catch { populateFallbackMakes(makeSel); makeSel.disabled = false; }
+}
+function populateFallbackMakes(sel) {
+  const common = [
+    // American
+    "Buick","Cadillac","Chevrolet","Chrysler","Dodge","Ford","GMC",
+    "Jeep","Lincoln","Lucid","RAM","Rivian","Tesla",
+    // Japanese
+    "Acura","Honda","INFINITI","Lexus","Mazda","Mitsubishi",
+    "Nissan","Subaru","Toyota",
+    // Korean
+    "Genesis","Hyundai","Kia",
+    // German
+    "Audi","BMW","Mercedes-Benz","MINI","Porsche","Volkswagen",
+    // European
+    "Alfa Romeo","Aston Martin","Bentley","Ferrari","FIAT",
+    "Jaguar","Lamborghini","Land Rover","Lotus",
+    "Maserati","McLaren","Polestar","Rolls-Royce","Volvo",
+  ].sort();
+  sel.innerHTML = '<option value="">-- Select Make --</option>';
+  common.forEach(make => { const opt = document.createElement('option'); opt.value = make; opt.textContent = make; sel.appendChild(opt); });
+}
+
+// ── Input restriction helpers ─────────────────────────────────────────────────
+function restrictDigits(e) {
+  // Allow: backspace, delete, tab, escape, enter, arrows, home, end, ctrl/cmd+A/C/V/X
+  const allowed = [8,9,13,27,46,37,38,39,40,35,36];
+  if (allowed.includes(e.keyCode)) return true;
+  if ((e.ctrlKey||e.metaKey) && [65,67,86,88].includes(e.keyCode)) return true;
+  // Block anything that isn't a digit
+  if (e.key && e.key.length === 1 && !/\d/.test(e.key)) { e.preventDefault(); return false; }
+  return true;
+}
+function restrictPhone(e) {
+  const allowed = [8,9,13,27,46,37,38,39,40,35,36];
+  if (allowed.includes(e.keyCode)) return true;
+  if ((e.ctrlKey||e.metaKey) && [65,67,86,88].includes(e.keyCode)) return true;
+  // Allow digits and phone formatting characters: + ( ) - space
+  if (e.key && e.key.length === 1 && !/[\d\+\(\)\-\s]/.test(e.key)) { e.preventDefault(); return false; }
+  return true;
+}
+async function loadModels(year, make) {
+  const modelSel = document.getElementById('vehicleModel');
+  modelSel.innerHTML = '<option value="">Loading...</option>';
+  modelSel.disabled = true;
+  try {
+    const res  = await fetch(`${NHTSA}/GetModelsForMakeYear/make/${encodeURIComponent(make)}/modelyear/${year}?format=json`);
+    const data = await res.json();
+    const models = (data.Results || []).map(m => m.Model_Name).sort();
+    modelSel.innerHTML = '<option value="">-- Select Model --</option>';
+    if (models.length === 0) modelSel.innerHTML += '<option value="Other">Other</option>';
+    else models.forEach(model => { const opt = document.createElement('option'); opt.value = model; opt.textContent = model; modelSel.appendChild(opt); });
+    modelSel.disabled = false;
+  } catch { modelSel.innerHTML = '<option value="">-- Select Model --</option><option value="Other">Other</option>'; modelSel.disabled = false; }
+}
+document.getElementById('vehicleYear').addEventListener('change', e => {
+  if (e.target.value) loadMakes(e.target.value);
+  else {
+    document.getElementById('vehicleMake').innerHTML  = '<option value="">-- Select Year First --</option>';
+    document.getElementById('vehicleMake').disabled   = true;
+    document.getElementById('vehicleModel').innerHTML = '<option value="">-- Select Make First --</option>';
+    document.getElementById('vehicleModel').disabled  = true;
+  }
+});
+document.getElementById('vehicleMake').addEventListener('change', e => {
+  const year = document.getElementById('vehicleYear').value;
+  if (e.target.value && year) loadModels(year, e.target.value);
+});
+
+// ── Photo Upload ──────────────────────────────────────────────────────────────
+let uploadedPhotos = [];
+const photoDrop  = document.getElementById('photoDrop');
+const photoInput = document.getElementById('photoInput');
+photoDrop.addEventListener('click', () => photoInput.click());
+photoDrop.addEventListener('dragover',  e => { e.preventDefault(); photoDrop.classList.add('drag-over'); });
+photoDrop.addEventListener('dragleave', () => photoDrop.classList.remove('drag-over'));
+photoDrop.addEventListener('drop', e => { e.preventDefault(); photoDrop.classList.remove('drag-over'); handleFiles(Array.from(e.dataTransfer.files)); });
+photoInput.addEventListener('change', () => handleFiles(Array.from(photoInput.files)));
+function handleFiles(files) {
+  files.forEach(file => {
+    if (uploadedPhotos.length >= 6) return;
+    if (file.size > 10 * 1024 * 1024) return;
+    if (!file.type.match(/image\/(jpeg|png|heic|heif)/i)) return;
+    const reader = new FileReader();
+    reader.onload = e => { uploadedPhotos.push({ name: file.name, url: e.target.result }); renderPreviews(); };
+    reader.readAsDataURL(file);
+  });
+  photoInput.value = '';
+}
+function renderPreviews() {
+  const container = document.getElementById('photoPreviews');
+  container.innerHTML = '';
+  uploadedPhotos.forEach((photo, i) => {
+    const thumb = document.createElement('div');
+    thumb.className = 'photo-thumb';
+    thumb.innerHTML = `<img src="${photo.url}" alt="Photo ${i+1}"><button type="button" onclick="removePhoto(${i})">✕</button>`;
+    container.appendChild(thumb);
+  });
+}
+function removePhoto(i) { uploadedPhotos.splice(i, 1); renderPreviews(); }
+
+// ── Duplicate Suppression ─────────────────────────────────────────────────────
+function isDuplicate(phone, email) {
+  const key = 'lswr_submissions', now = Date.now(), w = 24*60*60*1000;
+  let subs = [];
+  try { subs = JSON.parse(localStorage.getItem(key) || '[]'); } catch {}
+  subs = subs.filter(s => now - s.ts < w);
+  const dup = subs.find(s => s.phone === phone || s.email === email.toLowerCase());
+  if (!dup) subs.push({ phone, email: email.toLowerCase(), ts: now });
+  try { localStorage.setItem(key, JSON.stringify(subs)); } catch {}
+  return !!dup;
+}
+
+// ── Form Validation ───────────────────────────────────────────────────────────
+function clearErrors() {
+  document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+  document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+}
+function showError(fieldId, errId, msgEN, msgES) {
+  const f = document.getElementById(fieldId);
+  const e = document.getElementById('err-' + errId);
+  if (f) f.classList.add('error');
+  if (e) e.textContent = currentLang === 'es' ? msgES : msgEN;
+}
+function validateQuoteForm() {
+  clearErrors();
+  let v = true;
+  const fn = document.getElementById('firstName').value.trim();
+  const ph = document.getElementById('phone').value.trim();
+  const em = document.getElementById('email').value.trim();
+  const ci = document.getElementById('city').value.trim();
+  const zp = document.getElementById('zip').value.trim();
+  const yr = document.getElementById('vehicleYear').value;
+  const mk = document.getElementById('vehicleMake').value;
+  const mo = document.getElementById('vehicleModel').value;
+  const wh = document.getElementById('wheelCount').value;
+  const rt = document.getElementById('repairType').value;
+  if (!fn)                                               { showError('firstName','firstName','First name required','Nombre requerido'); v=false; }
+  if (!ph||!/^[\d\s\(\)\-\+]{7,15}$/.test(ph))         { showError('phone','phone','Valid phone required','Teléfono válido requerido'); v=false; }
+  if (!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))     { showError('email','email','Valid email required','Correo válido requerido'); v=false; }
+  if (!ci)                                               { showError('city','city','City required','Ciudad requerida'); v=false; }
+  if (!zp||!/^\d{5}$/.test(zp))                        { showError('zip','zip','5-digit ZIP required','Código postal requerido'); v=false; }
+  if (!yr)                                               { showError('vehicleYear','year','Select year','Selecciona año'); v=false; }
+  if (!mk)                                               { showError('vehicleMake','make','Select make','Selecciona marca'); v=false; }
+  if (!mo)                                               { showError('vehicleModel','model','Select model','Selecciona modelo'); v=false; }
+  if (!wh)                                               { showError('wheelCount','wheels','Select wheel count','Selecciona cantidad'); v=false; }
+  if (!rt)                                               { showError('repairType','repairType','Select repair type','Selecciona tipo'); v=false; }
+  return v;
+}
+
+// ── Quote Submit ──────────────────────────────────────────────────────────────
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (!validateQuoteForm()) return;
+  isDuplicate(document.getElementById('phone').value.trim(), document.getElementById('email').value.trim());
+  if (typeof gtag === 'function') gtag('event', 'quote_submitted', { city: document.getElementById('city').value, repair_type: document.getElementById('repairType').value });
+  document.getElementById('quoteFormWrap').classList.add('hidden');
+  document.getElementById('confirmation').classList.remove('hidden');
+  document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+  setLang(currentLang);
+});
+function resetForm() {
+  document.getElementById('quoteForm').reset();
+  uploadedPhotos = [];
+  renderPreviews();
+  clearErrors();
+  document.getElementById('vehicleMake').disabled  = true;
+  document.getElementById('vehicleModel').disabled = true;
+  document.getElementById('confirmation').classList.add('hidden');
+  document.getElementById('quoteFormWrap').classList.remove('hidden');
+}
+
+// ── Shop Apply ────────────────────────────────────────────────────────────────
+document.getElementById('shopForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const fields = ['shopName','ownerName','shopPhone','shopEmail','shopCity','shopZip','shopTier'];
+  if (fields.some(id => !document.getElementById(id).value.trim())) {
+    alert(currentLang === 'es' ? 'Por favor completa todos los campos requeridos.' : 'Please fill out all required fields.');
+    return;
+  }
+  document.getElementById('shopForm').classList.add('hidden');
+  document.getElementById('shopConfirmation').classList.remove('hidden');
+  setLang(currentLang);
+  if (typeof gtag === 'function') gtag('event', 'shop_application_submitted', { tier: document.getElementById('shopTier').value });
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+renderCities();
+loadYears();
+</script>
+</body>
+</html>
